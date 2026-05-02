@@ -1,0 +1,28 @@
+/* Deck Doctors Theme Overrides */
+.deckdocs-bg {
+  background: var(--bg);
+}
+
+/* Our Roots Theme Overrides */
+.ourroots-bg {
+  background: var(--bg-dark);
+  color: var(--text-inv);
+}
+
+/* Studio Brot Theme Overrides */
+.studiobrot-bg {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Museum Warsaw Theme Overrides */
+.msn-bg {
+  background: #fff;
+  color: #000;
+  font-family: var(--msn-font-next);
+}
+
+.msn-bg.dark {
+  background: #000;
+  color: #fff;
+}

@@ -1,0 +1,453 @@
+/* Mix Blend Mode */
+.blend-difference {
+  mix-blend-mode: difference;
+  color: var(--text-inv);
+}
+
+.blend-demo-box {
+  background: linear-gradient(90deg, #fff 50%, #000 50%);
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #fff;
+  margin: var(--spacing-large) 0;
+}
+
+/* Scroll Storytelling */
+.scroll-story {
+  height: 150vh;
+  position: relative;
+  background: #222;
+  color: #fff;
+  margin-top: var(--spacing-large);
+  border: 4px solid #fff;
+}
+
+.scroll-sticky {
+  position: sticky;
+  top: 0;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.scroll-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--type-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Custom Cursor */
+.cursor-wrap {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--text-inv);
+  position: absolute;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cursor-text-wrap {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  opacity: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: opacity 0.3s;
+}
+
+.cursor-trigger:hover ~ .cursor-wrap .cursor-circle {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.cursor-trigger:hover ~ .cursor-wrap .cursor-text-wrap {
+  opacity: 1;
+}
+
+/* Timeline */
+.timeline-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-mono);
+  z-index: 10;
+  margin-bottom: 2rem;
+}
+
+.year-block {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  font-size: 14px;
+  display: block;
+}
+
+.year-block:hover, .year-block.active {
+  opacity: 1;
+  font-weight: bold;
+}
+
+/* Buttons */
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 14px;
+}
+
+.btn-nav.black {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-nav.black:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-minimal {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm);
+  margin-top: 10px;
+}
+
+.btn-minimal::after {
+  content: '→';
+  transition: transform 0.2s;
+}
+
+.btn-minimal:hover::after {
+  transform: translateX(5px);
+}
+
+.btn-bracket {
+  position: relative;
+  display: inline-flex;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-bracket::before, .btn-bracket::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  border: var(--msn-border);
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn-bracket::before {
+  left: 0;
+  border-right: 0;
+  transform: translateX(-5px);
+}
+
+.btn-bracket::after {
+  right: 0;
+  border-left: 0;
+  transform: translateX(5px);
+}
+
+.btn-bracket:hover::before, .btn-bracket:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Manifesto */
+.manifesto-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  border: 4px solid #fff;
+  margin-bottom: var(--spacing-large);
+}
+
+/* Marquee */
+.marquee-container {
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+  padding: var(--spacing-large) 0;
+  border-top: 4px solid #fff;
+  border-bottom: 4px solid #fff;
+  margin-left: calc(var(--page-padding) * -1);
+  margin-right: calc(var(--page-padding) * -1);
+}
+
+.marquee-track {
+  display: flex;
+  gap: var(--spacing-large);
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+  width: max-content;
+}
+
+.marquee-item {
+  font-size: var(--type-h3);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.marquee-sep {
+  color: var(--color-signal);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Project Grid */
+.project {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  aspect-ratio: 4/5;
+  border: 4px solid #fff;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s;
+  opacity: 0.8;
+}
+
+.project:hover img {
+  transform: scale(1.05);
+  opacity: 0.4;
+}
+
+.project .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-medium);
+}
+
+.project h2 {
+  font-size: var(--type-h3);
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project:hover h2 {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Swup Overlay */
+.swup-overlay-demo {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  transform: translateY(100%);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swup-overlay-demo.is-active {
+  transform: translateY(0);
+}
+
+.swup-overlay-demo h1 {
+  color: #fff;
+  font-size: var(--type-h1);
+  text-transform: uppercase;
+  mix-blend-mode: difference;
+}
+
+/* Cookie Consent */
+.cky-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 400px;
+  background: #fff;
+  border: 1px solid #000;
+  padding: 2rem;
+  z-index: 10000;
+  box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+  font-family: var(--msn-font-next);
+  display: none;
+}
+
+.cky-container.is-active {
+  display: block;
+  animation: ckySlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes ckySlideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.cky-title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.cky-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.cky-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.cky-btn {
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  border: 1px solid #000;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cky-btn--accept {
+  background: #000;
+  color: #fff;
+}
+
+.cky-btn--accept:hover {
+  background: #fff;
+  color: #000;
+}
+
+.cky-btn--settings {
+  background: #fff;
+  color: #000;
+}
+
+.cky-btn--settings:hover {
+  background: #f4f4f4;
+}
+
+/* Scroll Top */
+.msn-scroll-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 40px;
+  height: 40px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #fff;
+  z-index: 1000;
+  transition: transform 0.3s, background 0.3s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.msn-scroll-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.msn-scroll-top:hover {
+  background: #000;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+/* Gradient Hover */
+.msn-grad-hover {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.msn-grad-hover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #00ff0a 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 1;
+}
+
+.msn-grad-hover:hover::before {
+  opacity: 1;
+}
+
+.msn-grad-hover span {
+  position: relative;
+  z-index: 2;
+  mix-blend-mode: difference;
+}

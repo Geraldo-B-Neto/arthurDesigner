@@ -1,0 +1,206 @@
+/* Luxury Magazine Pull Quotes */
+.pull-quotes-section {
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+.pull-quote-item {
+    height: 130vh;
+    position: relative;
+}
+
+.sticky-wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.keyword-massive {
+    position: absolute;
+    font-family: var(--font-serif);
+    font-size: 25vw;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+    white-space: nowrap;
+    will-change: transform;
+    z-index: 1;
+    line-height: 1;
+}
+
+.content-block {
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 4rem;
+    align-items: center;
+}
+
+.quote-text {
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 4vw, 3.2rem);
+    line-height: 1.1;
+    font-weight: 300;
+    color: #fff;
+    text-align: left;
+}
+
+.auth-seal {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: 20px 20px 0 var(--color-signal);
+    transform: rotate(2deg);
+    transition: all 0.4s ease;
+}
+
+/* UNIVERSAL ALTERNATION (Rotation & Alignment) */
+.pull-quote-item:nth-child(even) .auth-seal {
+    transform: rotate(-2deg);
+    box-shadow: -20px 20px 0 var(--color-signal);
+}
+
+.pull-quote-item:nth-child(even) .quote-text {
+    text-align: right;
+}
+
+/* DESKTOP ALTERNATION (Columns) */
+@media (min-width: 1025px) {
+    .pull-quote-item:nth-child(even) .content-block {
+        grid-template-columns: 400px 1fr;
+    }
+
+    .pull-quote-item:nth-child(even) .auth-seal {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .pull-quote-item:nth-child(even) .quote-text {
+        grid-column: 2;
+    }
+}
+
+.client-photo-wrap {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #222;
+    position: relative;
+}
+
+.client-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%);
+    opacity: 0.8;
+}
+
+.client-photo-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.client-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.client-name {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--color-signal);
+}
+
+.client-role {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* MOBILE REFINEMENT (Magazine Scatter) */
+@media (max-width: 1024px) {
+    .content-block {
+        grid-template-columns: 1fr 180px;
+        /* Larger image area */
+        display: grid;
+        gap: 1rem;
+        text-align: right;
+        align-items: end;
+    }
+
+    .pull-quote-item:nth-child(even) .content-block {
+        grid-template-columns: 180px 1fr;
+    }
+
+    .quote-text {
+        font-size: clamp(1.1rem, 5vw, 1.6rem);
+        line-height: 1.2;
+        text-align: right;
+        grid-column: 1;
+        margin-bottom: 1rem;
+    }
+
+    .pull-quote-item:nth-child(even) .quote-text {
+        text-align: left;
+        grid-column: 2;
+    }
+
+    .auth-seal {
+        width: 180px;
+        /* Increased size */
+        padding: 0.8rem;
+        box-shadow: 10px 10px 0 var(--color-signal) !important;
+        grid-column: 2;
+        transform: rotate(2deg) !important;
+    }
+
+    .pull-quote-item:nth-child(even) .auth-seal {
+        grid-column: 1;
+        transform: rotate(-2deg) !important;
+        box-shadow: -10px 10px 0 var(--color-signal) !important;
+    }
+
+    .client-photo-wrap {
+        aspect-ratio: 1;
+    }
+
+    .client-name {
+        font-size: 0.7rem;
+    }
+
+    .client-role {
+        display: block;
+        /* Restore role */
+        font-size: 0.5rem;
+    }
+
+    .keyword-massive {
+        font-size: 50vw;
+        opacity: 0.25;
+        /* Restored visibility */
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+    }
+}

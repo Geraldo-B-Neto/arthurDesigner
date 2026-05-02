@@ -1,0 +1,60 @@
+:root {
+  /* Cores Base */
+  --bg: #f4f4f0;
+  --bg-dark: #111;
+  --text: #111;
+  --text-inv: #f4f4f0;
+
+  /* Cores Funcionais & Acentos */
+  --color-signal: #FF0000;
+  --color-free: #00E600;
+  --color-occupied: #C00000;
+  --color-accent: #2d2e82;
+  /* Studio Brot Accent */
+  --color-warn: #FFD700;
+
+  /* Bordas e Sombras */
+  --border: 4px solid #000;
+  --shadow: 8px 8px 0 #000;
+  --shadow-sm: 4px 4px 0 #000;
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-mono: 'Tenor Sans', 'Courier Prime', Courier, monospace;
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Escala de Espaçamento Semântico (Deck Doctors Inspired) */
+  --spacing-tiny: 0.25rem;
+  /* 4px */
+  --spacing-small: 0.5rem;
+  /* 8px */
+  --spacing-medium: 1rem;
+  /* 16px */
+  --spacing-large: 2rem;
+  /* 32px */
+  --spacing-xlarge: 4rem;
+  /* 64px */
+  --spacing-xxlarge: 8rem;
+  /* 128px */
+  --spacing-huge: 16rem;
+  /* 256px */
+
+  /* Tipografia Fluida Extremada (Deck Doctors & Our Roots Inspired) */
+  --type-display: clamp(4rem, 10vw, 15rem);
+  --type-h1: clamp(3rem, 8vw, 10rem);
+  --type-h2: clamp(2.5rem, 6vw, 8rem);
+  --type-h3: clamp(2rem, 4vw, 5rem);
+  --type-body: clamp(1rem, 1.5vw, 1.5rem);
+  --type-mono-sm: clamp(0.75rem, 1vw, 1rem);
+
+  /* Grid Variáveis */
+  --grid-gap: var(--spacing-large);
+  --page-padding: var(--spacing-xlarge);
+
+  /* Museum Warsaw (Artmuseum.pl) Specifics */
+  --msn-border: 1px solid currentColor;
+  --msn-bg-alt: #f4f4f4;
+  --msn-font-next: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /* Simulating MSN Next */
+  --msn-font-qwerty: 'Courier New', Courier, monospace;
+  /* Simulating MSN Qwerty */
+}

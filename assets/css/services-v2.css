@@ -1,0 +1,440 @@
+/* SERVICE MATRIX V2 - The Immersive Service Blocks */
+.service-matrix {
+    position: relative;
+}
+
+.service-block {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    transition: background-color 0.8s ease;
+}
+
+/* 1. Social Media: The Editor's Desk (Refined) */
+.block-visual-feed {
+    background: #f9f9f7;
+    /* Sophisticated Cream */
+    background-image: radial-gradient(#e8e8e8 1px, transparent 1px);
+    background-size: 60px 60px;
+    color: #1a1a1a;
+    min-height: 150vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.canvas-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-size: 35vw;
+    color: rgba(0, 0, 0, 0.03);
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.visual-feed-container {
+    display: grid;
+    grid-template-columns: 450px 1fr;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+}
+
+.scattered-canvas {
+    position: relative;
+    height: 150vh;
+}
+
+.scattered-item {
+    position: absolute;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    box-shadow: 20px 30px 60px rgba(0, 0, 0, 0.06);
+    transition: transform 0.1s linear;
+}
+
+/* Monumental Photo (Main focus) */
+.item-main {
+    width: 550px;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%) rotate(-1deg);
+    z-index: 20;
+    /* In front of items behind */
+}
+
+/* Ghost Background Item */
+.item-behind {
+    width: 400px;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%) rotate(4deg);
+    z-index: 15;
+    /* Behind main photo */
+    opacity: 0.8;
+}
+
+/* Technical Stickers */
+.technical-sticker {
+    position: absolute;
+    background: #000;
+    color: #fff;
+    padding: 6px 12px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 30;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sticker-top-right {
+    top: -10px;
+    right: -20px;
+    background: var(--color-signal);
+}
+
+.sticker-bottom-left {
+    bottom: -15px;
+    left: -10px;
+}
+
+.feedback-bubble {
+    position: absolute;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    border-radius: 2px;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    max-width: 280px;
+    z-index: 25;
+    /* Overlaps corners */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Landing Pages: The Performance Lab (Horizontal Slide) */
+.block-performance-lab {
+    background: #f9f9f7; /* Cream base */
+    color: #1a1a1a;
+    width: 100%;
+    height: 700vh; /* Increased to slow down horizontal movement */
+    position: relative;
+    overflow: visible !important;
+}
+
+
+.sticky-performance-wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #f9f9f7;
+    z-index: 10;
+}
+
+.performance-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-size: 20vw;
+    color: rgba(0, 0, 0, 0.02);
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.performance-slider {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 6rem;
+    padding: 0 15%;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+}
+
+.perf-slide-card {
+    width: 900px;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 2.5rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 180px; /* Main content + Metrics Gutter */
+    gap: 2.5rem;
+    box-shadow: 30px 40px 0px rgba(0,0,0,0.02);
+}
+
+/* Corner Accents */
+.perf-slide-card::before, .perf-slide-card::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: #000;
+    border-style: solid;
+    pointer-events: none;
+}
+
+.perf-slide-card::before { top: -1px; left: -1px; border-width: 3px 0 0 3px; }
+.perf-slide-card::after { bottom: -1px; right: -1px; border-width: 0 3px 3px 0; }
+
+.card-diagnostic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.card-id-block span {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: #999;
+    display: block;
+}
+
+.card-id-block strong {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    letter-spacing: -0.02em;
+}
+
+.card-status-pill {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    padding: 4px 10px;
+    background: #000;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.blueprint-frame-v2 {
+    width: 100%;
+    aspect-ratio: 16/10;
+    background: #000;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+
+.blueprint-frame-v2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(1) brightness(0.8) contrast(1.2);
+    mix-blend-mode: screen; /* Makes it pop against black */
+    opacity: 0.9;
+    transition: all 0.5s ease;
+}
+
+.perf-slide-card:hover .blueprint-frame-v2 img {
+    filter: grayscale(0) brightness(1) contrast(1);
+    opacity: 1;
+}
+
+/* Metrics Gutter */
+.card-metrics-gutter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-left: 1px solid #eee;
+    padding-left: 2rem;
+}
+
+.metric-box {
+    margin-bottom: 2rem;
+}
+
+.metric-box label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: #888;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.metric-box .value {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.metric-box .value.signal { color: var(--color-signal); }
+
+.card-footer-info {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    line-height: 1.5;
+    color: #666;
+    margin-top: 1rem;
+}
+
+
+
+.lab-specs {
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.spec-item {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: #888;
+}
+
+.spec-item strong {
+    color: #fff;
+    display: block;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+/* 3. Lançamentos: The War Room (Horizontal Slide) */
+.block-war-room {
+    background: #000;
+    width: 100%;
+    height: 500vh; /* Deep vertical track for the horizontal journey */
+    position: relative;
+    overflow: visible !important; /* CRITICAL: Must be visible for sticky children to work */
+}
+
+.sticky-war-wrap {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #000;
+    z-index: 10;
+}
+
+
+
+.war-room-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--font-serif);
+    font-size: 25vw;
+    color: rgba(255, 0, 0, 0.1);
+    /* Bleeding Red */
+    white-space: nowrap;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.horizontal-slider {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 4rem;
+    padding: 0 10%;
+    align-items: center;
+    height: 100%;
+    width: max-content;
+}
+
+.slide-card {
+    width: 800px; /* Larger cards for impact */
+    background: #0a0a0a;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+    padding: 3rem;
+}
+
+
+.slide-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #111;
+    margin-bottom: 2rem;
+    object-fit: cover;
+}
+
+/* Theme Switching Utilities */
+body.theme-visual .service-matrix {
+    background: #111;
+}
+
+body.theme-performance .service-matrix {
+    background: #000;
+}
+
+body.theme-war .service-matrix {
+    background: #050000;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .perf-slide-card {
+        width: 85vw;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card-metrics-gutter {
+        flex-direction: row;
+        border-left: none;
+        border-top: 1px solid #eee;
+        padding-left: 0;
+        padding-top: 1.5rem;
+    }
+
+    .slide-card {
+        width: 80vw;
+    }
+
+    .performance-slider, .horizontal-slider {
+        gap: 3rem;
+        padding: 0 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .block-performance-lab { height: 500vh; } /* Faster scroll on mobile */
+    .block-war-room { height: 400vh; }
+
+    .perf-slide-card, .slide-card {
+        width: 90vw;
+        padding: 1.5rem;
+    }
+
+    .performance-title, .war-room-title {
+        font-size: 30vw;
+    }
+
+    .card-id-block strong {
+        font-size: 1.4rem;
+    }
+
+    .metric-box .value {
+        font-size: 1rem;
+    }
+
+    .card-metrics-gutter {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}

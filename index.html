@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arthur — Estratégia Visual</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Tenor+Sans&display=swap"
+        rel="stylesheet">
+
+    <!-- Modular CSS -->
+    <link rel="stylesheet" href="assets/css/tokens.css">
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/typography.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/themes.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
+    <link rel="stylesheet" href="assets/css/workflow.css">
+    <link rel="stylesheet" href="assets/css/immersive.css">
+    <link rel="stylesheet" href="assets/css/testimonials.css">
+    <link rel="stylesheet" href="assets/css/pull-quotes.css">
+    <link rel="stylesheet" href="assets/css/research-lab.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <link rel="stylesheet" href="assets/css/services-v2.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
+    <link rel="stylesheet" href="assets/css/preloader.css">
+    <link rel="stylesheet" href="assets/css/footer.css">
+</head>
+
+
+
+<body class="loading">
+    <!-- Technical Preloader -->
+    <div class="preloader">
+        <div class="preloader-scan"></div>
+        <div class="preloader-content">
+            <div class="preloader-counter">0%</div>
+            <div class="preloader-status">Initializing_System_Core // Brutalist_V.01</div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar-fill"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor for Lab Section -->
+    <div class="lab-cursor">
+        <span class="cursor-hud" id="cursor-tag">INSPECTING_ID: #0000</span>
+    </div>
+
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="hero-container">
+
+
+            <!-- Row 1: Left -->
+            <div class="hero-title-group reveal-right">
+                <h2 class="hero-title-serif">
+                    Estratégia<span class="underline-red">Visual</span>
+                </h2>
+            </div>
+
+            <!-- Row 1: Center -->
+            <img src="assets/img/arthurMaoNoQueixo.png" alt="Arthur" class="hero-image-center scan-in delay-1">
+
+            <!-- Row 1: Right -->
+            <div class="hero-right-col reveal-left delay-2">
+                <p class="hero-mini-desc">
+                    Especialista em design, landing pages e IA para lançamentos.
+                </p>
+                <div class="sticker-container">
+                    <svg class="sticker-svg" viewBox="0 0 100 100">
+                        <path id="circlePath" d="M 50, 50 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0"
+                            fill="transparent" />
+                        <text font-family="Tenor Sans, sans-serif" font-size="15" font-weight="thin" letter-spacing="1">
+                            <textPath xlink:href="#circlePath">
+                                DESIGN • WEB • IA • DESIGN • WEB • IA • DESIGN • WEB • IA •
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Row 2: Left (Eyes) -->
+            <div class="hero-eyes-container reveal-right delay-3">
+                <img src="assets/img/arthurOlhos.png" alt="Eyes" class="hero-eyes-img">
+            </div>
+
+            <!-- Row 2: Right -->
+            <div class="hero-insane-text reveal-left delay-4">
+                para quem busca o insano
+            </div>
+
+            <!-- Row 3: Bottom (Name) -->
+            <h1 class="hero-giant-name reveal-up delay-5">
+                ARTHUR
+            </h1>
+
+        </section>
+
+
+        <!-- Kinetic Gallery: The Projects Index -->
+        <section id="projects" class="projects-section">
+            <div class="project-counter reveal-right">
+                <span id="current-project">01</span>
+                <span class="counter-divider"></span>
+                <span id="total-projects">05</span>
+            </div>
+
+            <div class="projects-index">
+                <!-- Project 01 -->
+                <div class="project-item reveal-up" data-project="1">
+
+                    <div class="project-media">
+                        <img src="assets/img/arthurOlhos.png" class="project-image" alt="Project 01">
+                        <h3 class="project-title-bg">LUX_CHRONOS</h3>
+                    </div>
+                    <div class="project-meta">
+                        <span>PROJECT_ID // 001</span>
+                        <span>SCOPE: BRANDING + E-COMMERCE</span>
+                        <span>TECH: PURE_JS + WEBGL</span>
+                    </div>
+                </div>
+
+                <!-- Project 02 -->
+                <div class="project-item reveal-up" data-project="2">
+                    <div class="project-media">
+                        <img src="assets/img/arthurDeLado.png" class="project-image" alt="Project 02">
+                        <h3 class="project-title-bg">DEEP_VOID</h3>
+                    </div>
+                    <div class="project-meta">
+                        <span>PROJECT_ID // 002</span>
+                        <span>SCOPE: VISUAL IDENTITY</span>
+                        <span>TECH: GEN_ART // IA</span>
+                    </div>
+                </div>
+
+                <!-- Project 03 -->
+                <div class="project-item reveal-up" data-project="3">
+                    <div class="project-media">
+                        <img src="assets/img/arthurMaoNoQueixo.png" class="project-image" alt="Project 03">
+                        <h3 class="project-title-bg">SYNX_LABS</h3>
+                    </div>
+                    <div class="project-meta">
+                        <span>PROJECT_ID // 003</span>
+                        <span>SCOPE: UI ARCHITECTURE</span>
+                        <span>TECH: BRUTALIST_FRAMEWORK</span>
+                    </div>
+                </div>
+
+                <!-- Project 04 -->
+                <div class="project-item reveal-up" data-project="4">
+                    <div class="project-media">
+                        <img src="assets/img/arthurOlhos.png" class="project-image" alt="Project 04"
+                            style="filter: invert(1);">
+                        <h3 class="project-title-bg">NEO_ARCHIVE</h3>
+                    </div>
+                    <div class="project-meta">
+                        <span>PROJECT_ID // 004</span>
+                        <span>SCOPE: WEB EXPERIENCE</span>
+                        <span>TECH: CUSTOM_INTERACTION</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Serviços (Service Matrix V2) -->
+        <section class="service-matrix">
+
+            <!-- Block 02: Landing Pages -->
+            <div class="service-block block-performance-lab" data-theme="performance" style="height: 700vh;">
+                <div class="sticky-performance-wrap">
+                    <h2 class="performance-title reveal-up">ARCHITECT</h2>
+
+                    <div class="performance-slider">
+                        <!-- Card 01: Bianca Carvalho -->
+                        <div class="perf-slide-card scale-in">
+                            <div class="card-main-col">
+                                <header class="card-diagnostic-header">
+                                    <div class="card-id-block">
+                                        <span>SYSTEM_REF // BIANCA</span>
+                                        <strong>Personal Organizer</strong>
+                                    </div>
+                                    <div class="card-status-pill">STABLE // V.04</div>
+                                </header>
+                                <div class="blueprint-frame-v2">
+                                    <img src="assets/img/workflow_04.png" alt="Project 01">
+                                </div>
+                                <p class="card-footer-info">Implementação de fluxo minimalista para portfólio de alto
+                                    luxo. Foco em tipografia serifada e espaços negativos.</p>
+                            </div>
+                            <aside class="card-metrics-gutter">
+                                <div class="metric-box">
+                                    <label>SPEED_INDEX</label>
+                                    <div class="value signal">0.4s</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>SEO_SCORE</label>
+                                    <div class="value">100%</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>CONVERSION</label>
+                                    <div class="value">A+</div>
+                                </div>
+                            </aside>
+                        </div>
+
+                        <!-- Card 02: The Home Edit -->
+                        <div class="perf-slide-card scale-in">
+                            <div class="card-main-col">
+                                <header class="card-diagnostic-header">
+                                    <div class="card-id-block">
+                                        <span>SYSTEM_REF // EDIT</span>
+                                        <strong>The Home Edit</strong>
+                                    </div>
+                                    <div class="card-status-pill">OPTIMIZED</div>
+                                </header>
+                                <div class="blueprint-frame-v2">
+                                    <img src="assets/img/workflow_02.png" alt="Project 02">
+                                </div>
+                                <p class="card-footer-info">Redesign de ecossistema digital com foco em usabilidade e
+                                    clareza visual extrema.</p>
+                            </div>
+                            <aside class="card-metrics-gutter">
+                                <div class="metric-box">
+                                    <label>LCP_TIME</label>
+                                    <div class="value signal">0.6s</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>FID_DELAY</label>
+                                    <div class="value">12ms</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>RESPONSIVE</label>
+                                    <div class="value">OK</div>
+                                </div>
+                            </aside>
+                        </div>
+
+                        <!-- Card 03: Mimos de Loop -->
+                        <div class="perf-slide-card scale-in">
+                            <div class="card-main-col">
+                                <header class="card-diagnostic-header">
+                                    <div class="card-id-block">
+                                        <span>SYSTEM_REF // MIMOS</span>
+                                        <strong>Mimos de Loop</strong>
+                                    </div>
+                                    <div class="card-status-pill">LEGACY_REV</div>
+                                </header>
+                                <div class="blueprint-frame-v2">
+                                    <img src="assets/img/workflow_03.png" alt="Project 03">
+                                </div>
+                                <p class="card-footer-info">Otimização de checkout e jornada de compra para e-commerce
+                                    de alto impacto visual.</p>
+                            </div>
+                            <aside class="card-metrics-gutter">
+                                <div class="metric-box">
+                                    <label>CART_SPEED</label>
+                                    <div class="value signal">0.3s</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>RETENTION</label>
+                                    <div class="value">94%</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>UX_SCORE</label>
+                                    <div class="value">10/10</div>
+                                </div>
+                            </aside>
+                        </div>
+
+                        <!-- Card 04: IA Research -->
+                        <div class="perf-slide-card scale-in">
+                            <div class="card-main-col">
+                                <header class="card-diagnostic-header">
+                                    <div class="card-id-block">
+                                        <span>SYSTEM_REF // IA_ARC</span>
+                                        <strong>IA Data Arch</strong>
+                                    </div>
+                                    <div class="card-status-pill">RESEARCH</div>
+                                </header>
+                                <div class="blueprint-frame-v2">
+                                    <img src="assets/img/workflow_01.png" alt="Project 04">
+                                </div>
+                                <p class="card-footer-info">Pesquisa e desenvolvimento de interfaces geradas por IA com
+                                    performance determinística.</p>
+                            </div>
+                            <aside class="card-metrics-gutter">
+                                <div class="metric-box">
+                                    <label>AI_LATENCY</label>
+                                    <div class="value signal">45ms</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>DATA_CORE</label>
+                                    <div class="value">V.02</div>
+                                </div>
+                                <div class="metric-box">
+                                    <label>SYNC_RATE</label>
+                                    <div class="value">99%</div>
+                                </div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 03: Lançamentos -->
+            <div class="service-block block-war-room" data-theme="war" style="height: 500vh;">
+                <!-- Sticky Wrapper for Horizontal Scroll -->
+                <div class="sticky-war-wrap">
+                    <h2 class="war-room-title reveal-up">WAR_ROOM</h2>
+
+                    <div class="horizontal-slider">
+                        <div class="slide-card scale-in">
+                            <span class="narrative-label">STRATEGY_01</span>
+                            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">
+                                SCALABLE_ARCHITECTURE</h3>
+                            <img src="assets/img/workflow_01.png" class="slide-img" alt="">
+                            <p style="font-family: var(--font-mono); font-size: 0.7rem; color: #666;">Desenvolvimento de
+                                estruturas robustas para suportar tráfego massivo em tempo real.</p>
+                        </div>
+                        <div class="slide-card scale-in">
+                            <span class="narrative-label">STRATEGY_02</span>
+                            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">
+                                LAUNCH_ECOSYSTEM</h3>
+                            <img src="assets/img/workflow_02.png" class="slide-img" alt="">
+                            <p style="font-family: var(--font-mono); font-size: 0.7rem; color: #666;">Integração total
+                                entre anúncios, páginas e funis de conversão.</p>
+                        </div>
+                        <div class="slide-card scale-in">
+                            <span class="narrative-label">STRATEGY_03</span>
+                            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">
+                                TACTICAL_DEPLOYMENT</h3>
+                            <img src="assets/img/workflow_03.png" class="slide-img" alt="">
+                            <p style="font-family: var(--font-mono); font-size: 0.7rem; color: #666;">Entrega otimizada
+                                e monitoramento de performance em janelas críticas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="immersive-lens" class="immersive-section" data-active-step="0">
+            <div class="immersive-sticky">
+                <!-- Parallax Backgrounds -->
+                <div class="parallax-bg-wrap">
+                    <img src="assets/IMG/workflow_03.png" class="parallax-layer parallax-layer-1" alt="">
+                    <img src="assets/IMG/workflow_04.png" class="parallax-layer parallax-layer-2" alt="">
+                </div>
+
+                <!-- HUD Overlay -->
+                <div class="immersive-hud">
+                    <div class="hud-corner top-left">SCN_001 // BRUTALIST_ENGINE</div>
+                    <div class="hud-corner top-right" id="hud-coords">COORD_X: 0.00</div>
+                    <div class="hud-corner bottom-left" id="hud-status">STATUS: INITIALIZING</div>
+                    <div class="hud-corner bottom-right" id="hud-progress">LN_POS: 0.00%</div>
+                    <div class="hud-scan-line"></div>
+                </div>
+
+                <!-- 1. The Portal -->
+                <div class="lens-portal">
+                    <img src="assets/IMG/arthurDeLado.png" class="lens-image" alt="Arthur">
+                    <div class="lens-overlay"></div>
+                </div>
+
+                <!-- 2. The Content (Workflow Cards Integrated) -->
+                <div class="immersive-content">
+                    <!-- Step 1 -->
+                    <div class="immersive-step" data-step="1">
+
+                        <h3 class="workflow-title">Diagnóstico & Estratégia</h3>
+                        <p class="workflow-description">Desconstruímos o briefing para encontrar a essência bruta do seu
+                            lançamento.</p>
+                        <div class="workflow-visual">
+                            <img src="assets/IMG/workflow_01.png" alt="Diagnóstico & Estratégia">
+                        </div>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="immersive-step" data-step="2">
+
+                        <h3 class="workflow-title">Design de Alta Fidelidade</h3>
+                        <p class="workflow-description">Criação de interfaces que provocam desejo através de estética
+                            brutalista e precisão técnica.</p>
+                        <div class="workflow-visual">
+                            <img src="assets/IMG/workflow_02.png" alt="Design de Alta Fidelidade">
+                        </div>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="immersive-step" data-step="3">
+
+                        <h3 class="workflow-title">Engenharia com IA</h3>
+                        <p class="workflow-description">Aceleração criativa através de ensaios visuais gerados por
+                            inteligência artificial, criando o extraordinário.</p>
+                        <div class="workflow-visual">
+                            <img src="assets/IMG/workflow_03.png" alt="Engenharia com IA">
+                        </div>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="immersive-step" data-step="4">
+
+                        <h3 class="workflow-title">Implementação Raw</h3>
+                        <p class="workflow-description">Desenvolvimento em código puro (HTML/JS) focado em performance
+                            extrema e carregamento instantâneo.</p>
+                        <div class="workflow-visual">
+                            <img src="assets/IMG/workflow_04.png" alt="Implementação Raw">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gatilhos Invisíveis -->
+            <div class="scroll-trigger" data-trigger="0"></div>
+            <div class="scroll-trigger" data-trigger="1"></div>
+            <div class="scroll-trigger" data-trigger="2"></div>
+            <div class="scroll-trigger" data-trigger="3"></div>
+            <div class="scroll-trigger" data-trigger="4"></div>
+            <div class="scroll-trigger" data-trigger="5"></div>
+        </section>
+
+        <!-- 3. Depoimentos (Marquees) -->
+        <section id="testimonials" class="testimonials-gallery">
+            <!-- Row 1: Left -->
+            <div class="marquee-wrapper reveal-right scale-in" data-direction="left">
+                <div class="marquee-content">
+                    <div class="testimonial-group">
+                        <span class="testimonial-item">"Design <em class="italic">Insano</em> que converte"</span>
+                        <span class="client-id">Bruno S. // Infoprodutor</span>
+                    </div>
+                    <div class="testimonial-group">
+                        <span class="testimonial-item outline">"A elite da <em class="italic">estratégia</em>
+                            visual"</span>
+                        <span class="client-id">Camila R. // CEO Branding</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2: Right -->
+            <div class="marquee-wrapper reveal-left scale-in" data-direction="right">
+                <div class="marquee-content">
+                    <div class="testimonial-group">
+                        <span class="testimonial-item outline">"Transformação <em class="italic">brutal</em>"</span>
+                        <span class="client-id">Lucas M. // Tech Lead</span>
+                    </div>
+                    <div class="testimonial-group">
+                        <span class="testimonial-item">"O segredo dos <span class="censor-box">bastidores</span>"</span>
+                        <span class="client-id">Agência X // Lançamentos</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Left -->
+            <div class="marquee-wrapper reveal-right scale-in" data-direction="left">
+                <div class="marquee-content">
+                    <div class="testimonial-group">
+                        <span class="testimonial-item">"Estética de <em class="italic">Elite</em>"</span>
+                        <span class="client-id">Marina P. // Influencer</span>
+                    </div>
+                    <div class="testimonial-group">
+                        <span class="testimonial-item outline">"Impacto <span class="censor-box">Imediato</span>"</span>
+                        <span class="client-id">Rodrigo T. // E-commerce</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Depoimentos (Pull Quotes) -->
+        <section class="pull-quotes-section">
+            <!-- Item 1 -->
+            <div class="pull-quote-item reveal-up">
+                <div class="sticky-wrap">
+                    <h2 class="keyword-massive outline" data-speed="0.5">TRANSFORMAÇÃO</h2>
+                    <div class="content-block">
+                        <p class="quote-text">"O trabalho do Arthur elevou nosso patamar visual a um nível que não
+                            sabíamos ser possível com IA."</p>
+                        <div class="auth-seal">
+                            <div class="client-photo-wrap">
+                                <img src="assets/img/arthurOlhos.png" alt="" class="client-photo">
+                            </div>
+                            <div class="client-info">
+                                <span class="client-name">Ricardo V.</span>
+                                <span class="client-role">Founder @ TechFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="pull-quote-item reveal-up">
+                <div class="sticky-wrap">
+                    <h2 class="keyword-massive outline" data-speed="-0.3">EXCLUSIVIDADE</h2>
+                    <div class="content-block">
+                        <p class="quote-text">"Uma estética brutalista que comunica autoridade instantânea. É design de
+                            elite para projetos de elite."</p>
+                        <div class="auth-seal">
+                            <div class="client-photo-wrap">
+                                <img src="assets/img/arthurDeLado.png" alt="" class="client-photo">
+                            </div>
+                            <div class="client-info">
+                                <span class="client-name">Helena M.</span>
+                                <span class="client-role">Creative Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="pull-quote-item reveal-up">
+                <div class="sticky-wrap">
+                    <h2 class="keyword-massive outline" data-speed="0.4">PERFORMANCE</h2>
+                    <div class="content-block">
+                        <p class="quote-text">"Velocidade de carregamento insana. O DevWeb Framework mudou nossa
+                            percepção de como um site deve performar."</p>
+                        <div class="auth-seal">
+                            <div class="client-photo-wrap">
+                                <img src="assets/img/arthurOlhos.png" alt="" class="client-photo">
+                            </div>
+                            <div class="client-info">
+                                <span class="client-name">Marcos G.</span>
+                                <span class="client-role">CTO @ NexaTech</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Vault (Research Lab) -->
+        <section class="research-lab-section">
+            <div class="research-container">
+                <aside class="research-narrative reveal-right">
+                    <span class="tech-header">ARCHIVE // V.01</span>
+                    <h2 class="narrative-title">Research Lab</h2>
+                    <p class="narrative-text">"O instinto é treinado. Aqui reside o arquivo de referências e
+                        experimentos que moldam cada interface estratégica."</p>
+                </aside>
+
+                <div class="bento-grid">
+                    <!-- Item 1: Large AI Reference -->
+                    <div class="bento-item large reveal-up" data-ref="#IA_ARCH_01">
+                        <img src="assets/IMG/arthurOlhos.png" alt="" class="bento-image">
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">MODEL_V6.1 // SEED_4298</span>
+                    </div>
+
+                    <!-- Item 2: Code Snippet -->
+                    <div class="bento-item reveal-up" data-ref="#SRC_CODE_04">
+                        <div class="code-fragment"
+                            style="padding: 2rem; font-family: var(--font-mono); font-size: 0.7rem;">
+                            <pre><code>.portal {
+  scale: var(--z);
+  filter: blur(calc(var(--z) * 10px));
+}</code></pre>
+                        </div>
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">ENGINE_CORE // V_8.4</span>
+                    </div>
+
+                    <!-- Item 3: Macro Texture -->
+                    <div class="bento-item reveal-up" data-ref="#TEX_MACRO_09">
+                        <img src="assets/IMG/arthurDeLado.png" alt="" class="bento-image" style="object-position: top;">
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">REF_TYPE: MACRO_TEXTURE // ID: 09</span>
+                    </div>
+
+                    <!-- Item 4: Wide Brand Ref -->
+                    <div class="bento-item wide reveal-up" data-ref="#BRN_STRAT_12">
+                        <img src="assets/IMG/arthurMaoNoQueixo.png" alt="" class="bento-image">
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">BRAND_DNA // FEAR_OF_GOD // ID: 12</span>
+                    </div>
+
+                    <!-- Item 5: Standard Fragment -->
+                    <div class="bento-item reveal-up" data-ref="#FRG_RAW_15">
+                        <div style="font-family: var(--font-serif); font-size: 5rem; opacity: 0.1; font-weight: 900;">AI
+                        </div>
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">STATUS: UNRELEASED // RAW_DATA</span>
+                    </div>
+
+                    <!-- Item 6: Code Snippet 2 -->
+                    <div class="bento-item reveal-up" data-ref="#SRC_CODE_07">
+                        <div class="code-fragment"
+                            style="padding: 2rem; font-family: var(--font-mono); font-size: 0.6rem;">
+                            <pre><code>async function sync() {
+  await lens.focus();
+  return archive.fetch();
+}</code></pre>
+                        </div>
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">LOGIC_FLOW // ASYNC_READ</span>
+                    </div>
+
+                    <!-- Item 7: Negative Recon -->
+                    <div class="bento-item reveal-up" data-ref="#FRG_RAW_16">
+                        <img src="assets/IMG/arthurOlhos.png" alt="" class="bento-image"
+                            style="filter: grayscale(1) invert(1);">
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">RECON_MODE: NEGATIVE // ID: 16</span>
+                    </div>
+
+                    <!-- Item 8: Tech Macro -->
+                    <div class="bento-item reveal-up" data-ref="#TEX_MACRO_22">
+                        <img src="assets/IMG/arthurMaoNoQueixo.png" alt="" class="bento-image"
+                            style="object-position: right; filter: contrast(1.5) grayscale(1);">
+                        <div class="noise-overlay"></div>
+                        <span class="item-meta">STABILITY: 0.85 // READY</span>
+                    </div>
+        </section>
+
+        <section id="contact" class="cta-section">
+            <div class="glitch-marker-v"></div>
+
+            <div class="cta-grid-container">
+                <!-- Rotated Sidebar -->
+                <div class="cta-sidebar">
+                    <p class="cta-subtitle"
+                        data-typewriter='["APENAS 2 VAGAS RESTANTES PARA O Q3 DE 2026.", "ESTRATÉGIA VISUAL DE ELITE PARA MARCAS DE ELITE.", "TRANSFORME SUA AUTORIDADE DIGITAL AGORA."]'>
+                    </p>
+                </div>
+
+                <!-- Bleeding Title -->
+                <h2 class="cta-title reveal-up" data-text="READY TO UPGRADE YOUR VISUAL STRATEGY?">
+                    <span class="line-1">READY TO UPGRADE</span>
+                    <span class="line-2">YOUR VISUAL STRATEGY?</span>
+                </h2>
+
+                <!-- Bottom Off-Center Row -->
+                <div class="cta-footer-row reveal-up delay-2">
+                    <span class="tech-label">STATUS_REPORT_01 // SECURE_CONNECTION_ESTABLISHED</span>
+                    <div class="cta-divider-h"></div>
+                    <button class="main-cta-button">
+                        <span id="btn-text">START_PROJECT</span><span class="cursor-blink"></span>
+                    </button>
+                </div>
+            </div>
+
+
+            <footer class="main-footer">
+                <div class="availability-status">
+                    <div class="status-indicator">
+                        <div class="led-pulse"></div>
+                        <span>AVAILABLE</span>
+                    </div>
+                    <div id="local-clock" class="local-clock">--:--:-- GMT-3</div>
+                </div>
+                <span class="footer-signature reveal-up">ENGINEERED BY DEVWEB // ARTH_V01.0</span>
+                <span class="footer-signature reveal-up">© 2026 ARTHUR ESTRATÉGIA VISUAL</span>
+            </footer>
+        </section>
+    </main>
+
+    <!-- JS Modules -->
+    <script type="module" src="assets/js/main.js"></script>
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/preloader.js"></script>
+    <script src="assets/js/immersive.js"></script>
+
+    <script src="assets/js/testimonials.js"></script>
+    <script src="assets/js/pull-quotes.js"></script>
+    <script src="assets/js/projects.js"></script>
+    <script src="assets/js/services-v2.js"></script>
+    <script src="assets/js/research-lab.js"></script>
+    <script src="assets/js/footer.js"></script>
+</body>
+
+</html>

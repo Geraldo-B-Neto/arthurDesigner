@@ -1,0 +1,128 @@
+/* Nav Vitals (Deck Doctors Pattern) */
+.nav-vitals {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: var(--bg-dark);
+  color: var(--text-inv);
+  border-bottom: var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-small) var(--page-padding);
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-vitals__group {
+  display: flex;
+  gap: var(--spacing-large);
+}
+
+.nav-vitals__item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-small);
+}
+
+.dot-indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--color-signal);
+  border-radius: 50%;
+  animation: blink 2s infinite;
+}
+
+.dot-indicator--green {
+  background: var(--color-free);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Global Header */
+.global-header {
+  padding: var(--spacing-xxlarge) var(--page-padding);
+  background: var(--bg);
+  border-bottom: var(--border);
+}
+
+.global-header h1 {
+  font-size: var(--type-h1);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -2px;
+}
+
+.global-header p {
+  font-family: var(--font-mono);
+  font-size: var(--type-body);
+  margin-top: var(--spacing-medium);
+  color: var(--color-signal);
+}
+
+/* Sections */
+.section {
+  padding: var(--spacing-xxlarge) 0;
+  border-bottom: var(--border);
+}
+
+.section__header {
+  padding: 0 var(--page-padding);
+  margin-bottom: var(--spacing-xlarge);
+}
+
+.section__label {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: var(--spacing-small);
+  color: #888;
+}
+
+.section__title {
+  font-size: var(--type-h2);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -2px;
+}
+
+.section-content {
+  padding: 0 var(--page-padding);
+}
+
+/* Grid System (MSN Inspired) */
+.msn-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: var(--msn-border);
+  border-left: var(--msn-border);
+}
+
+.msn-cell {
+  border-bottom: var(--msn-border);
+  border-right: var(--msn-border);
+  padding: 1rem;
+  position: relative;
+}
+
+/* Utilities */
+.pattern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--grid-gap);
+}
+
+@media(max-width: 768px) {
+  .nav-vitals__group { display: none; }
+  .nav-vitals { justify-content: center; }
+}

@@ -1,0 +1,87 @@
+/* Kinetic Testimonials Gallery */
+.testimonials-gallery {
+    background: var(--bg-dark);
+    padding: var(--spacing-xxlarge) 0;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+}
+
+/* Massive Typography System */
+.marquee-wrapper {
+    display: flex;
+    white-space: nowrap;
+    padding: var(--spacing-medium) 0;
+}
+
+.marquee-content {
+    display: flex;
+    gap: 4rem;
+    will-change: transform;
+}
+
+.testimonial-item {
+    font-family: var(--font-serif);
+    font-size: 15vw;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    color: var(--text-inv);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.testimonial-item.outline {
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+}
+
+.testimonial-item em.italic {
+    font-style: italic;
+    color: var(--color-signal);
+    -webkit-text-stroke: 0;
+}
+
+/* Minimalist ID */
+.client-id {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-signal);
+    text-transform: uppercase;
+    display: block;
+    margin-top: -2vw;
+    letter-spacing: 2px;
+}
+
+/* Censor Bar Effect */
+.censor-box {
+    background: #000;
+    color: transparent;
+    padding: 0 10px;
+    position: relative;
+    cursor: help;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.censor-box::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #000;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: left;
+}
+
+.censor-box:hover {
+    color: var(--text-inv);
+}
+
+.censor-box:hover::after {
+    transform: scaleX(0);
+}
+
+/* Horizontal alignment stagger */
+.marquee-wrapper[data-direction="right"] {
+    margin-left: -10vw;
+}

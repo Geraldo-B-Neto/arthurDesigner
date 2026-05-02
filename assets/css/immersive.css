@@ -1,0 +1,308 @@
+/* Immersive Workflow Experience */
+.immersive-section {
+    position: relative;
+    height: auto; /* Managed by triggers */
+    background: #000;
+}
+
+.immersive-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Gatilhos */
+.scroll-trigger {
+    height: 100vh;
+    width: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* 1. The Lens Portal */
+.lens-portal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.lens-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform-origin: center center;
+}
+
+.lens-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle, transparent 20%, #000 70%);
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 11;
+}
+
+/* 2. Content Transitions */
+.lens-image {
+    /* Chase logic: transition creates inertia as it follows the variable */
+    transform: scale(calc(1 + var(--scroll-progress) * 25));
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
+    will-change: transform, opacity;
+}
+
+.immersive-step {
+    transition: 
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1), 
+        opacity 0.8s linear,
+        visibility 0.8s linear;
+    will-change: transform, opacity;
+}
+
+.immersive-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.immersive-step {
+    position: absolute;
+    width: 90%;
+    max-width: 800px;
+    max-height: 85vh;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    transform: translateY(40px);
+    
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(10,10,10,0.95);
+    padding: 2rem;
+    box-shadow: 15px 15px 0 var(--color-signal);
+    overflow: hidden;
+}
+
+/* Decorative Accent instead of Number */
+.immersive-step::before {
+    content: "";
+    width: 40px;
+    height: 2px;
+    background: var(--color-signal);
+    margin-bottom: 1rem;
+}
+
+/* STATE LOGIC WITH OVERLAP STAGGER */
+
+/* Step 0: Initial */
+[data-active-step="0"] .lens-image { opacity: 1; }
+
+/* Step 1: Lens Zoom + Step 01 */
+[data-active-step="1"] .lens-image { opacity: 0; }
+[data-active-step="1"] .immersive-step[data-step="1"] { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0);
+    transition-delay: 0.1s; /* Organic entry */
+}
+
+/* Step 2: Step 01 Out + Step 02 In */
+[data-active-step="2"] .immersive-step[data-step="1"] { transform: translateY(-40px); opacity: 0; }
+[data-active-step="2"] .immersive-step[data-step="2"] { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+/* Step 3: Step 02 Out + Step 03 In */
+[data-active-step="3"] .immersive-step[data-step="2"] { transform: translateY(-40px); opacity: 0; }
+[data-active-step="3"] .immersive-step[data-step="3"] { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+/* Step 4: Step 03 Out + Step 04 In */
+[data-active-step="4"] .immersive-step[data-step="3"] { transform: translateY(-40px); opacity: 0; }
+[data-active-step="4"] .immersive-step[data-step="4"] { 
+    opacity: 1; 
+    visibility: visible; 
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+/* Step 5: EXIT IMMERSION (Transition back to normal) */
+[data-active-step="5"] .immersive-sticky {
+    opacity: 0;
+    transform: scale(0.9) translateY(-100px);
+    filter: blur(20px);
+    transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-active-step="5"] .immersive-step[data-step="4"] {
+    opacity: 0;
+    transform: translateY(-80px);
+}
+
+/* 3. Background Parallax (Simplified states) */
+.parallax-bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.parallax-layer {
+    position: absolute;
+    inset: -10%;
+    width: 120%;
+    height: 120%;
+    object-fit: cover;
+    opacity: 0.1;
+    filter: grayscale(100%);
+}
+
+[data-active-step="1"] .parallax-layer-1 { transform: translateY(-20px); opacity: 0.15; }
+[data-active-step="2"] .parallax-layer-2 { transform: translateY(-40px); opacity: 0.15; }
+[data-active-step="3"] .parallax-layer-1 { transform: translateY(-60px); opacity: 0.2; }
+[data-active-step="4"] .parallax-layer-2 { transform: translateY(-80px); opacity: 0.2; }
+
+/* 4. HUD Overlay */
+.immersive-hud {
+    position: absolute;
+    inset: 0;
+    z-index: 40;
+    pointer-events: none;
+    padding: var(--spacing-medium);
+    font-family: var(--font-mono);
+    color: var(--color-signal);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+.hud-corner {
+    position: absolute;
+    padding: 10px;
+}
+
+.hud-corner.top-left { top: 20px; left: 20px; border-left: 1px solid currentColor; border-top: 1px solid currentColor; }
+.hud-corner.top-right { top: 20px; right: 20px; border-right: 1px solid currentColor; border-top: 1px solid currentColor; text-align: right; }
+.hud-corner.bottom-left { bottom: 20px; left: 20px; border-left: 1px solid currentColor; border-bottom: 1px solid currentColor; }
+.hud-corner.bottom-right { bottom: 20px; right: 20px; border-right: 1px solid currentColor; border-bottom: 1px solid currentColor; text-align: right; }
+
+.hud-scan-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-signal), transparent);
+    opacity: 0.3;
+    animation: scanMove 4s infinite ease-in-out;
+}
+
+@keyframes scanMove {
+    0%, 100% { transform: translateY(-45vh); }
+    50% { transform: translateY(45vh); }
+}
+
+.workflow-number {
+    font-family: var(--font-sans);
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 900;
+    line-height: 0.8;
+    color: #fff;
+    opacity: 0.3;
+}
+
+.workflow-title {
+    font-family: var(--font-serif);
+    font-size: clamp(2rem, 5vw, 4rem);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    margin: 0 0 1rem 0;
+    color: #fff;
+}
+
+.workflow-description {
+    font-family: var(--font-mono);
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    line-height: 1.6;
+    color: #ccc;
+    max-width: 450px;
+    margin-bottom: 2rem;
+}
+
+.workflow-visual {
+    width: 100%;
+    max-width: 480px;
+    aspect-ratio: 16/9;
+    border: 1px solid rgba(255,255,255,0.4);
+    overflow: hidden;
+    position: relative;
+    background: #111;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.workflow-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .immersive-step {
+        width: 92%;
+        padding: 3rem 1.5rem;
+        gap: 1rem;
+    }
+    
+    .workflow-title {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+        margin-bottom: 0.5rem;
+    }
+
+    .workflow-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+        max-width: 100%;
+    }
+
+    .immersive-hud {
+        font-size: 0.6rem;
+        letter-spacing: 1px;
+    }
+
+    .hud-corner {
+        padding: 5px;
+    }
+
+    /* Hide some HUD elements on very small screens to avoid clutter */
+    @media (max-width: 480px) {
+        .hud-corner.bottom-left, .hud-corner.bottom-right {
+            display: none;
+        }
+    }
+}

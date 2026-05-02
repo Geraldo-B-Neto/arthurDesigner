@@ -1,0 +1,41 @@
+/* Typography Showcase */
+.typo-showcase {
+  border: var(--border);
+  padding: var(--spacing-xlarge);
+  background: #fff;
+  color: #000;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--spacing-large);
+}
+
+.typo-label {
+  font-family: var(--font-mono);
+  font-size: var(--type-mono-sm);
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: var(--spacing-small);
+  border-bottom: 2px solid #000;
+  padding-bottom: 4px;
+}
+
+/* Word-by-word reveal (Our Roots) */
+.hero__word {
+  display: inline-block;
+  overflow: hidden;
+  font-size: var(--type-display);
+  font-weight: 900;
+  line-height: 0.85;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  margin-right: 2vw;
+}
+
+.hero__word span {
+  display: inline-block;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.ourroots-bg.is-loaded .hero__word span {
+  transform: translateY(0);
+}

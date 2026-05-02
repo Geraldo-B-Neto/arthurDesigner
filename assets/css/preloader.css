@@ -1,0 +1,92 @@
+/* Technical Preloader Styles */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-signal);
+    font-family: var(--font-mono);
+    transition: transform 1.2s cubic-bezier(0.85, 0, 0.15, 1);
+}
+
+.preloader.finished {
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.preloader-content {
+    text-align: center;
+}
+
+.preloader-counter {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+    margin-bottom: 1rem;
+}
+
+.preloader-status {
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+.preloader-bar-wrap {
+    width: 200px;
+    height: 2px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.preloader-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--color-signal);
+}
+
+.preloader-scan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent, rgba(255, 0, 0, 0.05), transparent);
+    background-size: 100% 20px;
+    animation: scanMove 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100vh; }
+}
+
+/* Hide main content while loading */
+body.loading {
+    overflow: hidden;
+}
+
+body.loading main {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.loaded main {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease;
+}
+
